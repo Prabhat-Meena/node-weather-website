@@ -3,7 +3,7 @@ const path = require('path')
 const weatherForcast = require("./utils/forcast.js")
 const geoCod = require("./utils/geoCode.js")
 
-
+const port = process.env.PORT || 5000;
 const app = express();
 
 const hbs = require('hbs')
@@ -101,7 +101,7 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(5000, () => {
-    console.log('listing on port no 5000');
+app.listen(port, () => {
+    console.log(`http://localhost:${port}`);
 })
 
