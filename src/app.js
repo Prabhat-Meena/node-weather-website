@@ -3,7 +3,7 @@ const path = require('path')
 const weatherForcast = require("./utils/forcast.js")
 const geoCod = require("./utils/geoCode.js")
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 const app = express();
 
 const hbs = require('hbs')
