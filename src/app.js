@@ -3,8 +3,9 @@ const path = require('path')
 const weatherForcast = require("./utils/forcast.js")
 const geoCod = require("./utils/geoCode.js")
 
-const port = process.env.PORT || 3000;
 const app = express();
+
+const port = process.env.PORT || 3000;
 
 const hbs = require('hbs')
 
@@ -29,7 +30,7 @@ app.get('', (req, res) => {
     // res.render('index')
     res.render('index', {
         title: 'Weather App',
-        name: "Prabhat"
+        name: "Prabhat Meena"
     })
 
 })
@@ -37,13 +38,13 @@ app.get('', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         title: "About me",
-        name: "Prabhat"
+        name: "Prabhat Meena"
     })
 })
 
 app.get("/help", (req, res) => {
     res.render('help', {
-        helpText: "contact us for help",
+        helpText: "contact us for more details",
         title: 'Help',
         name: 'Prabhat Meena'
     })
@@ -74,17 +75,17 @@ app.get("/weather", (req, res) => {
 
 })
 
-app.get('/products', (req, res) => {
-    if (!req.query.search) {
-        return res.send({
-            error: 'you must provide search term'
-        })
-    }
-    console.log(req.query.search);
-    res.send({
-        products: []
-    })
-})
+// app.get('/products', (req, res) => {
+//     if (!req.query.search) {
+//         return res.send({
+//             error: 'you must provide search term'
+//         })
+//     }
+//     console.log(req.query.search);
+//     res.send({
+//         products: []
+//     })
+// })
 app.get('/help/*', (req, res) => {
     res.render("404", {
         title: '404',
@@ -105,3 +106,4 @@ app.listen(port, () => {
     console.log(`http://localhost:${port}`);
 })
 
+module.exports = port;

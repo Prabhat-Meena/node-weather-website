@@ -17,7 +17,7 @@ const weatherForcast = ({ lat, lon } = {}, callback) => {
 
         }
         else {
-            callback(undefined,{Forecast:  `${body.weather[0].description}  its currently ${body.main.temp} degrees out. it feels like ${body.main.feels_like} degrees out`, Location: `${body.name}, ${body.sys.country}`, Address: body.name});
+            callback(undefined,{Forecast:  `${body.weather[0].description},  its currently ${body.main.temp} degrees. It feels like ${body.main.feels_like} degrees out. The high today is ${body.main.temp_max} degree, with a low of ${body.main.temp_min} degree and the humidity is  ${body.main.humidity}%`, Location: `${body.name}, ${body.sys.country}.`, Address: body.name});
         }
     }
     )
